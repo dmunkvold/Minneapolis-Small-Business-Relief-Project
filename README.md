@@ -7,5 +7,7 @@ This project is a Rails based web application that will allow businesses in Minn
 We are first focusing on restaurants and other food service businesse but plan to open it up to all types of businesses.
 
 Author:
+
 David Munkvold
+
 PC Doodle 2020
