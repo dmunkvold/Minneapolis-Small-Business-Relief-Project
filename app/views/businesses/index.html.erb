@@ -1,0 +1,31 @@
+
+<h1>Minneapolis Business Index</h1>
+<% if @search %>
+  <h3>Search Results:</h3>
+<% else %>
+  <h3>Listed below is an index of all businesses that have been registered with the Minneapolis Small Business Relief Project.</h3>
+  <p>Find out what services your local businesses are offering during this time and/or find out how you can help them make it through mandated closures.</p>
+  <p>If you want to register your business with the Minneapolis Small Business Relief Project, select "Register Your Business from the Navigation Menu."</p>
+  <br>
+  <h3> Filter by Community </h3>
+  <%= form_tag('/businesses', method: :get) do %>
+    <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }) %>
+    <%= submit_tag 'Filter' %>
+  <% end %>
+  <br>
+<% end %>
+
+<table id='business-index-table'>
+  <tr>
+    <th> Business / Organization </th>
+    <th> Current Status </th>
+    <th> Community </th>
+  </tr>
+  <% @businesses.each do |business| %>
+    <tr>
+      <td> <%= link_to business.name, business_path(business.id) %> </td>
+      <td> <%= business.status %> </td>
+      <td> <%= business.community.name %> </td>
+    </tr>
+  <% end %>
+</table>

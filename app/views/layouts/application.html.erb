@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MinneapolisSmallBusinessReliefProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <% if browser_type == "mobile" %>
+      <p> youre on a phone </p>
+    <% else %>
+      <div id="navbar">
+        <table style="width:100%">
+          <tr>
+            <td>
+              <ul>
+                <li>
+                  <p> Minneapolis Small Business Relief Project </p>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul id="registration">
+                <% if user_signed_in? %>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to "Log In", new_user_session_path %></li>
+                <% end %>
+              <% unless current_page?(root_path) %>
+                <li><%= link_to "Home", root_path %></li>
+              <% end %>
+              <% unless current_page?(new_business_path) %>
+                <% if user_signed_in? and current_user.businesses.any? %>
+                  <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
+                    <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
+                  <% end %>
+                <% else %>
+                  <li><%= link_to "Register Your Business", new_business_path %></li>
+                <% end %>
+              <% end %>
+              <li>
+                <%= form_tag('/businesses', method: :get) do %>
+                  Search for Business<%= text_field_tag :name, params[:name] %>
+                  <%= submit_tag 'Search' %>
+                <% end %>
+              </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+
+
+
+    <% if flash[:notice] -%>
+      <div class = "notice-box"><%= flash[:notice] %></div>
+    <% end %>
+
+
+    <%= yield %>
+
+
+    <div class="footer">
+      <p>Powered by PC Doodle 2020</p>
+    </div>
+  </body>
+</html>

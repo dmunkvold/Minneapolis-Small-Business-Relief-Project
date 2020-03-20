@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+#navbar table {
+  border-style: none;
+  background-color: #76A9DD;
+}
+
+label {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 12px;
+}
+
+a {
+  padding: 12px;
+}
+ h1, h2, h3 {
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   padding: 12px;
+ }
+
+p {
+  margin-left: 12px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+ ul {
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #76A9DD;
+ }
+
+ #registration li {
+   text-align: right;
+   float: right;
+ }
+
+ li {
+   float: left;
+ }
+
+ li p {
+   color: white;
+ }
+
+ li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   transition: 0.3s;
+ }
+
+li form {
+   color: white;
+   text-decoration: none;
+   padding-top: 13px;
+   padding-right: 12px;
+}
+
+ li form input {
+   border-style: none;
+ }
+
+ /* Change the link color to #111 (black) on hover */
+ li a:hover {
+   background-color: white;
+   color: black;
+ }
+
+ .notice-box {
+
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   color: #31708f;
+   background-color: #d9edf7;
+   border-color: #bce8f1;
+ }
+
+ .footer {
+   color: white;
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   padding-left: 14px;
+   padding-right: 14px;
+   background-color: #76A9DD;
+   text-align: left;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   left: 0;
+   overflow: hidden;
+ }
+
+.footer p {
+  margin: 0;
+  font-size: .75rem;
+}
+
+.submit-btn input {
+  font-size: 1.25rem;
+  border-style: none;
+  margin-left: 12px;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 24px;
+  text-decoration: none;
+  transition: 0.3s;
+  background-color: #76A9DD;
+}
+
+.submit-btn input:hover {
+  background-color: white;
+  color: black;
+}
