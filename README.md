@@ -1,24 +1,13 @@
-# README
+# Minneapolis-Small-Business-Relief-Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Minneapolis Small Business Relief Project is an effort to organize information about local restaurants and small businesses in response to the mandated closures of many modes of business in the city. 
 
-Things you may want to cover:
+This project is a Rails based web application that will allow businesses in Minneapolis to solicit any services that they still offer as well as advertise for relief funding such that they may make it through the closures caused by Covid-19.
 
-* Ruby version
+We are first focusing on restaurants and other food service businesse but plan to open it up to all types of businesses.
 
-* System dependencies
+Author:
 
-* Configuration
+David Munkvold
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+PC Doodle 2020
