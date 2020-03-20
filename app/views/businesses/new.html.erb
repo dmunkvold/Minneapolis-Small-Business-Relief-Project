@@ -1,32 +1,32 @@
 <div class='business-form'>
   <%= form_for @business do |b| %>
-    <h3>Name</h3>
+    <h2>Name</h2>
     <p>Please enter the name of your business</p>
     <%= b.text_field :name %>
     <br>
 
-    <h3>Status</h3>
+    <h2>Status</h2>
     <p>Please enter the current status of your business.</p>
     <p>This is what users see first, so enter the most important information that you want to communicate.</p>
     <p>Examples could include "Open," "Pickup and Dropoff Only," or "Seeking Financial Support." Character limit 256.</p>
     <%= b.text_field :status %>
     <br>
 
-    <h3>Further Information</h3>
+    <h2>Further Information</h2>
     <p>Users will see this when they view your business's profile.</p>
     <p>This is a good place to add links to your website, phone numbers, links to crowdfunding profiles.</p>
     <p>Examples could include "Call this number to purchase a gift card" or "Our current business hours have changed," or any other details or resources you wish to provide. No character limit.</p>
-    <%= b.text_area :description %>
+    <%= b.text_area :description, cols: "100", rows: "10"  %>
     <br>
 
-    <h3>Community</h3>
+    <h2>Community</h2>
     <p>Please select the community within Minneapolis where your business is located.</p>
-    <%= b.select :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] })%>
+    <%= b.select :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }), include_blank: true %>
 
     <%= b.hidden_field :user_id, value: current_user.id %>
     <br>
     <div class="submit-btn">
-      <%= b.button :submit %>
+      <%= b.submit "Submit" %>
     </div>
   <% end %>
 </div>

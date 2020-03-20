@@ -41,6 +41,21 @@
   padding: 12px;
 }
 
-.business-form p, input, textarea, select {
+.business-form > * {
+  font-size: 1.25rem;
+  margin: 12px;
+}
+
+.business-form input {
   margin-left: 12px;
+}
+
+.business-form textarea {
+  margin-left: 12px;
+}
+
+.business-form select {
+  margin-left: 12px;
+  padding: 12px;
+  font-size: 1.25rem;
 }

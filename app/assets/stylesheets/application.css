@@ -84,6 +84,11 @@ li form {
    color: black;
  }
 
+select {
+  padding: 12px;
+  font-size: 1.25rem;
+}
+
  .notice-box {
 
    padding: 15px;
@@ -132,4 +137,13 @@ li form {
 .submit-btn input:hover {
   background-color: white;
   color: black;
+}
+
+.new_user {
+  font-size: 1.5rem;
+}
+
+.new_user input{
+  margin:12px;
+  font-size: 1.5rem;
 }

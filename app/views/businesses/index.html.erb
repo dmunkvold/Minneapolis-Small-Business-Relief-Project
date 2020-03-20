@@ -9,7 +9,7 @@
   <br>
   <h3> Filter by Community </h3>
   <%= form_tag('/businesses', method: :get) do %>
-    <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }) %>
+    <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }), include_blank: true %>
     <%= submit_tag 'Filter' %>
   <% end %>
   <br>

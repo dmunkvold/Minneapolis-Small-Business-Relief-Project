@@ -15,7 +15,7 @@ class BusinessesController < ApplicationController
     if user_signed_in?
       @business = Business.new
     else
-      redirect_to new_user_session_path
+      redirect_to new_user_registration_path
     end
   end
 

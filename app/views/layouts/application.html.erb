@@ -21,9 +21,7 @@
           <tr>
             <td>
               <ul>
-                <li>
-                  <p> Minneapolis Small Business Relief Project </p>
-                </li>
+                <li><%= link_to "Minneapolis Small Business Relief Project", root_path %></li>
               </ul>
             </td>
             <td>
@@ -33,9 +31,6 @@
                 <% else %>
                   <li><%= link_to "Log In", new_user_session_path %></li>
                 <% end %>
-              <% unless current_page?(root_path) %>
-                <li><%= link_to "Home", root_path %></li>
-              <% end %>
               <% unless current_page?(new_business_path) %>
                 <% if user_signed_in? and current_user.businesses.any? %>
                   <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
