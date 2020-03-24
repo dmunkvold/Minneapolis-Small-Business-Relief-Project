@@ -34,6 +34,12 @@ p {
   }
 }
 
+ul {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  background-color: #76A9DD;
+}
+
 select {
   padding: 12px;
   font-size: 1.25rem;
@@ -51,17 +57,47 @@ select {
   padding-top: 66px;
 }
 
-.navbar-mobile ul {
+ul {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   list-style-type: none;
   background-color: #76A9DD;
 }
 
+.navbar table {
+  padding: 8px;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+.navbar-desktop-menu li {
+  display:inline;
+  text-align: right;
+  float: right;
+}
+
+.navbar-desktop-menu li a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.25rem;
+}
+
+
 .navbar-mobile {
   overflow: hidden;
 }
 
-.navbar-mobile table {
+.navbar-mobile table, .navbar table {
   border-style: none;
   background-color: #76A9DD;
 }
@@ -70,7 +106,7 @@ select {
   color: white;
 }
 
-.navbar-mobile a {
+.navbar-mobile a, .navbar a {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   color: white;
   text-decoration: none;
@@ -114,6 +150,10 @@ select {
   column-span: 100%;
 }
 
+#title a {
+  font-size: 2rem;
+  padding: 8px;
+}
 // label {
 //   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 //   padding: 12px;

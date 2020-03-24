@@ -19,7 +19,7 @@
   <tr>
     <th> Business / Organization </th>
     <th> Current Status </th>
-    <% if browser_type = "mobile" or browser_type = "tablet" %>
+    <% if browser_type == "mobile" or browser_type == "tablet" %>
     <% else %>
       <th> Community </th>
     <% end %>
@@ -28,7 +28,7 @@
     <tr>
       <td> <%= link_to business.name, business_path(business.id) %> </td>
       <td> <%= business.status %> </td>
-      <% if browser_type = "mobile" or browser_type = "tablet" %>
+      <% if browser_type == "mobile" or browser_type == "tablet" %>
       <% else %>
         <td> <%= business.community.name %> </td>
       <% end %>

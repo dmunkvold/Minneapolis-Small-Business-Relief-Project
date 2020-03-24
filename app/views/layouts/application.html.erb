@@ -18,8 +18,7 @@
   </head>
 
   <body>
-
-    <% if browser_type = "mobile" or browser_type = "tablet" %>
+    <% if browser_type == "mobile" or browser_type == "tablet" %>
       <div class="navbar-mobile">
         <table style="width:100%">
           <tr>
@@ -78,30 +77,28 @@
               <%= link_to "Minneapolis Small Business Relief Project", root_path %>
             </td>
             <td>
-              <div>
-                <ul>
-                  <% if user_signed_in? %>
-                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-                  <% else %>
-                    <li><%= link_to "Log In", new_user_session_path %></li>
-                  <% end %>
-                <% unless current_page?(new_business_path) %>
-                  <% if user_signed_in? and current_user.businesses.any? %>
-                    <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
-                      <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
-                    <% end %>
-                  <% else %>
-                    <li><%= link_to "Register Your Business", new_business_path %></li>
-                  <% end %>
+              <ul class="navbar-desktop-menu">
+                <% if user_signed_in? %>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to "Log In", new_user_session_path %></li>
                 <% end %>
+              <% unless current_page?(new_business_path) %>
+                <% if user_signed_in? and current_user.businesses.any? %>
+                  <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
+                    <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
+                  <% end %>
+                <% else %>
+                  <li><%= link_to "Register Your Business", new_business_path %></li>
+                <% end %>
+              <% end %>
                 <li>
                   <%= form_tag('/businesses', method: :get) do %>
                     <%= text_field_tag :name, params[:name] %>
                     <%= submit_tag 'Search' %>
                   <% end %>
                 </li>
-                </ul>
-              </div>
+              </ul>
           </td>
         </tr>
         </table>
