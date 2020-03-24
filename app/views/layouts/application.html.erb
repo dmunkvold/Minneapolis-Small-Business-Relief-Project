@@ -8,50 +8,106 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("navbar-dropdown");
+        dropdown.classList.toggle('open');
+      }
+    </script>
   </head>
 
   <body>
 
-    <% if browser_type == "mobile" %>
-      <p> youre on a phone </p>
-    <% else %>
-      <div id="navbar">
+    <% if browser_type = "mobile" or browser_type = "tablet" %>
+      <div class="navbar-mobile">
         <table style="width:100%">
           <tr>
-            <td>
-              <ul>
-                <li><%= link_to "Minneapolis Small Business Relief Project", root_path %></li>
-              </ul>
+            <td id="title-mobile">
+              <%= link_to "Minneapolis Small Business Relief Project", root_path %>
             </td>
-            <td>
-              <ul id="registration">
-                <% if user_signed_in? %>
-                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-                <% else %>
-                  <li><%= link_to "Log In", new_user_session_path %></li>
-                <% end %>
-              <% unless current_page?(new_business_path) %>
-                <% if user_signed_in? and current_user.businesses.any? %>
-                  <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
-                    <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
+            <td id="hamburger-mobile">
+              <button id="navbar-toggle-dropdown", onclick="toggleDropdown()"><i class="fa fa-bars"></i></button>
+            </td>
+          <tr>
+            <td id="dropdown-container">
+              <div id="navbar-dropdown">
+                <ul>
+                  <% if user_signed_in? %>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Log In", new_user_session_path %></li>
                   <% end %>
-                <% else %>
-                  <li><%= link_to "Register Your Business", new_business_path %></li>
+                <% unless current_page?(new_business_path) %>
+                  <% if user_signed_in? and current_user.businesses.any? %>
+                    <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
+                      <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
+                    <% end %>
+                  <% else %>
+                    <li><%= link_to "Register Your Business", new_business_path %></li>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <li>
-                <%= form_tag('/businesses', method: :get) do %>
-                  Search for Business<%= text_field_tag :name, params[:name] %>
-                  <%= submit_tag 'Search' %>
-                <% end %>
-              </li>
-              </ul>
+                <li>
+                  <%= form_tag('/businesses', method: :get) do %>
+                    <%= text_field_tag :name, params[:name] %>
+                    <%= submit_tag 'Search' %>
+                  <% end %>
+                </li>
+                </ul>
+              </div>
+          </td>
+        </tr>
+        </table>
+      </div>
+    <% else %>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="navbar">
+        <table style="width:100%">
+          <tr>
+            <td id="title">
+              <%= link_to "Minneapolis Small Business Relief Project", root_path %>
             </td>
-          </tr>
+            <td>
+              <div>
+                <ul>
+                  <% if user_signed_in? %>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Log In", new_user_session_path %></li>
+                  <% end %>
+                <% unless current_page?(new_business_path) %>
+                  <% if user_signed_in? and current_user.businesses.any? %>
+                    <% unless current_page?(edit_business_path(current_user.businesses.first.id)) %>
+                      <li><%= link_to "Edit Your Business Profile", edit_business_path(current_user.businesses.first.id) %></li>
+                    <% end %>
+                  <% else %>
+                    <li><%= link_to "Register Your Business", new_business_path %></li>
+                  <% end %>
+                <% end %>
+                <li>
+                  <%= form_tag('/businesses', method: :get) do %>
+                    <%= text_field_tag :name, params[:name] %>
+                    <%= submit_tag 'Search' %>
+                  <% end %>
+                </li>
+                </ul>
+              </div>
+          </td>
+        </tr>
         </table>
       </div>
     <% end %>
+
 
 
 

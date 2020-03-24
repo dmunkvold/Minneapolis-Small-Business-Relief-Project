@@ -1,0 +1,211 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+//universal styles:
+
+$breakpoint: 1200px;
+
+h1, h2, h3 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 12px;
+  @media (max-width: $breakpoint) {
+    font-size: 4rem;
+  }
+}
+
+p {
+  margin-left: 12px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  @media (max-width: $breakpoint) {
+    font-size: 3rem;
+  }
+}
+
+select {
+  padding: 12px;
+  font-size: 1.25rem;
+}
+
+#title-mobile{
+ display: block;
+ padding-left: 16px;
+ padding-top: 66px;
+ font-size: 5rem;
+ width:75%;
+}
+
+#hamburger-mobile {
+  padding-top: 66px;
+}
+
+.navbar-mobile ul {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  background-color: #76A9DD;
+}
+
+.navbar-mobile {
+  overflow: hidden;
+}
+
+.navbar-mobile table {
+  border-style: none;
+  background-color: #76A9DD;
+}
+
+.navbar-mobile p {
+  color: white;
+}
+
+.navbar-mobile a {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar-mobile li {
+  margin: 24px;
+}
+
+#navbar-toggle-dropdown {
+  float:right;
+  text-align: center;
+  border-style: none;
+  color:white;
+  background-color:  #76A9DD;
+  font-size: 5rem;
+  padding: 8px 16px;
+  transition: 0.3s;
+  margin-right:25%;
+}
+
+#navbar-dropdown {
+  width:100%;
+  font-size: 4rem;
+  height: 0px;
+  opacity: 0;
+  transition: all .5s ease;
+  top: 35px;
+  width: 100%;
+}
+
+#navbar-dropdown.open{
+  height: 400px;
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#dropdown-container {
+  column-span: 100%;
+}
+
+// label {
+//   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+//   padding: 12px;
+// }
+
+// a {
+//   padding: 12px;
+// }
+
+
+
+
+// li form {
+//    color: white;
+//    text-decoration: none;
+//    padding-top: 13px;
+//    padding-right: 12px;
+// }
+
+ // li form input {
+ //   border-style: none;
+ // }
+
+ /* Change the link color to #111 (black) on hover */
+
+
+
+
+ .notice-box {
+
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   color: #31708f;
+   background-color: #d9edf7;
+   border-color: #bce8f1;
+   @media (max-width: $breakpoint) {
+     font-size: 3rem;
+   }
+ }
+
+ .footer {
+   color: white;
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   padding-left: 14px;
+   padding-right: 14px;
+   background-color: #76A9DD;
+   text-align: left;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   left: 0;
+   overflow: hidden;
+ }
+
+.footer p {
+  margin: 0;
+  font-size: .75rem;
+  @media (max-width: $breakpoint) {
+    font-size: 2rem;
+  }
+}
+
+.submit-btn input {
+  font-size: 1.25rem;
+  border-style: none;
+  margin-left: 12px;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 24px;
+  text-decoration: none;
+  transition: 0.3s;
+  background-color: #76A9DD;
+}
+
+.submit-btn input:hover {
+  background-color: white;
+  color: black;
+}
+
+.new_user {
+  font-size: 1.5rem;
+}
+
+.new_user input{
+  margin:12px;
+  font-size: 1.5rem;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+/* Style the button that is used to open and close the collapsible content */
