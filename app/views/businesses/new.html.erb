@@ -12,6 +12,21 @@
     <%= b.text_field :status %>
     <br>
 
+    <h2>Delivery Contact</h2>
+    <p>Please enter a phone number or URL by which users can place orders for delivery. Leave blank if your business is not offering delivery.</p>
+    <%= b.text_field :delivery_contact %>
+    <br>
+
+    <h2>Curb-Side Pick-Up Contact</h2>
+    <p>Please enter a phone number or URL by which users can place orders for takeout. Leave blank if your business is not offering curbside pick-up.</p>
+    <%= b.text_field :pickup_contact %>
+    <br>
+
+    <h2>Relief Contact</h2>
+    <p>Please enter a phone number or URL by which users can provide relief funding for your business. Leave blank if your business is not accepting relief funding.</p>
+    <%= b.text_field :relief_contact %>
+    <br>
+
     <h2>Further Information</h2>
     <p>Users will see this when they view your business's profile.</p>
     <p>This is a good place to add links to your website, phone numbers, links to crowdfunding profiles.</p>

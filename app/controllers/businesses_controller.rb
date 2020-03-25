@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  include ApplicationHelper
 
   def index
     if params[:community_id]
@@ -50,8 +51,12 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def contact
+    contact_business(params[:contact_string])
+  end
+
   private
   def business_params
-    params.require(:business).permit(:name, :status, :description, :community_id, :user_id)
+    params.require(:business).permit(:name, :status, :description, :community_id, :user_id, :delivery_contact, :pickup_contact, :relief_contact)
   end
 end

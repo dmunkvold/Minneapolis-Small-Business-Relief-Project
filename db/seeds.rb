@@ -18,6 +18,6 @@ communities = Community.create!([{name: 'Calhoun-Isle'},
                                 {name: 'Southwest'},
                                 {name: 'University'}])
 
-businesses = Business.create!([{name: 'PC Doodle', status: 'OPEN', community: Community.first, user: User.first},
-                              {name: 'Cafe Racer Kitchen', status: 'Food Delivery/Pickup', community: Community.first, user: User.first},
-                              {name: 'Testicles4Sale', status: 'Seeking Financial Support', community: Community.first, user: User.first}])
+# businesses = Business.create!([{name: 'PC Doodle', status: 'OPEN', community: Community.first, user: User.first},
+#                               {name: 'Cafe Racer Kitchen', status: 'Food Delivery/Pickup', community: Community.first, user: User.first},
+#                               {name: 'Testicles4Sale', status: 'Seeking Financial Support', community: Community.first, user: User.first}])

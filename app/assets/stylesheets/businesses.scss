@@ -3,6 +3,43 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $breakpoint: 1200px;
 
+.business-form {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: black;
+  padding: 12px;
+}
+
+.business-form > * {
+  font-size: 1.25rem;
+  margin: 12px;
+}
+
+.business-form input {
+  margin-left: 12px;
+}
+
+.business-form textarea {
+  margin-left: 12px;
+}
+
+.business-form select {
+  margin-left: 12px;
+  padding: 12px;
+  font-size: 1.25rem;
+}
+
+.resource-container button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 #business-index-table {
  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
  border-collapse: collapse;
@@ -49,27 +86,20 @@ $breakpoint: 1200px;
   color: #006BDE;
 }
 
-.business-form {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  color: black;
-  padding: 12px;
+#foodservice-contact-btn {
+  background-color: #4CAF50;
 }
 
-.business-form > * {
-  font-size: 1.25rem;
-  margin: 12px;
+#foodservice-contact-btn:hover {
+  background-color: white;
+  color: #4CAF50;
 }
 
-.business-form input {
-  margin-left: 12px;
+#relief-contact-btn {
+  background-color: #f44336;
 }
 
-.business-form textarea {
-  margin-left: 12px;
-}
-
-.business-form select {
-  margin-left: 12px;
-  padding: 12px;
-  font-size: 1.25rem;
+#relief-contact-btn:hover {
+  background-color: white;
+  color: #f44336;
 }

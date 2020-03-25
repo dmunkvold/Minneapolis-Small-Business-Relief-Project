@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_212826) do
     t.string "pickup_contact"
     t.string "delivery_contact"
     t.string "relief_contact"
+    t.string "other_contact"
     t.index ["community_id"], name: "index_businesses_on_community_id"
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end

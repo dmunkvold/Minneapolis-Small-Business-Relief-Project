@@ -18,7 +18,7 @@
 <table id='business-index-table'>
   <tr>
     <th> Business / Organization </th>
-    <th> Current Status </th>
+    <th> Resources </th>
     <% if browser_type == "mobile" or browser_type == "tablet" %>
     <% else %>
       <th> Community </th>
@@ -27,7 +27,16 @@
   <% @businesses.each do |business| %>
     <tr>
       <td> <%= link_to business.name, business_path(business.id) %> </td>
-      <td> <%= business.status %> </td>
+      <% if business.delivery_contact.present? or business.pickup_contact.present? or business.relief_contact.present? %>
+        <td>
+          <div class="resource-container">
+            <% if business.delivery_contact.present? %><%= button_to 'TEST', contact_path(contact_string: business.delivery_contact) %><button id='foodservice-contact-btn'>Delivery: <br><%= business.delivery_contact %></button><% end %>
+            <% if business.pickup_contact.present? %><button id='foodservice-contact-btn'>Pick-Up: <br><%= business.pickup_contact %></button><% end %>
+            <% if business.relief_contact.present? %><%= button_to 'RELIEF', contact_path(contact_string: business.relief_contact) %><button id='relief-contact-btn'>Relief: <br><%= business.relief_contact %></button><% end %>
+          </div>
+        </td>
+      <% end %>
+      <div id="foodservice-contact"></div>
       <% if browser_type == "mobile" or browser_type == "tablet" %>
       <% else %>
         <td> <%= business.community.name %> </td>
