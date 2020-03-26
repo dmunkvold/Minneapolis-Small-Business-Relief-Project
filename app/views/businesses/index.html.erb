@@ -1,46 +1,66 @@
 
-<h1>Minneapolis Business Index</h1>
-<% if @search %>
-  <h3>Search Results:</h3>
-<% else %>
-  <h3>Listed below is an index of all businesses that have been registered with the Minneapolis Small Business Relief Project.</h3>
-  <p>Find out what services your local businesses are offering during this time and/or find out how you can help them make it through mandated closures.</p>
-  <p>If you want to register your business with the Minneapolis Small Business Relief Project, select "Register Your Business from the Navigation Menu."</p>
-  <br>
-  <h3> Filter by Community </h3>
-  <%= form_tag('/businesses', method: :get) do %>
-    <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }), include_blank: true %>
-    <%= submit_tag 'Filter' %>
-  <% end %>
-  <br>
-<% end %>
-
-<table id='business-index-table'>
-  <tr>
-    <th> Business / Organization </th>
-    <th> Resources </th>
-    <% if browser_type == "mobile" or browser_type == "tablet" %>
-    <% else %>
-      <th> Community </th>
+<div id="business-index">
+  <h1>Minneapolis Business Index</h1>
+  <% if @search %>
+    <h3>Search Results:</h3>
+  <% else %>
+    <h3>Listed below is an index of all businesses that have been registered with the Minneapolis Small Business Relief Project.</h3>
+    <p>Find out what services your local businesses are offering during this time and/or find out how you can help them make it through mandated closures.</p>
+    <p>If you want to register your business with the Minneapolis Small Business Relief Project, select "Register Your Business from the Navigation Menu."</p>
+    <br>
+    <h3> Filter by Community </h3>
+    <%= form_tag('/businesses', method: :get) do %>
+      <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }), include_blank: true %>
+      <%= submit_tag 'Filter' %>
     <% end %>
-  </tr>
-  <% @businesses.each do |business| %>
+    <br>
+  <% end %>
+
+  <table id='business-index-table'>
     <tr>
-      <td> <%= link_to business.name, business_path(business.id) %> </td>
-      <% if business.delivery_contact.present? or business.pickup_contact.present? or business.relief_contact.present? %>
-        <td>
-          <div class="resource-container">
-            <% if business.delivery_contact.present? %><%= button_to 'Delivery: ' + business.delivery_contact, contact_path(contact_string: business.delivery_contact), id: 'foodservice-contact-btn' %><% end %>
-            <% if business.pickup_contact.present? %><%= button_to 'Pick-Up: ' + business.pickup_contact, contact_path(contact_string: business.pickup_contact), id: 'foodservice-contact-btn' %><% end %>
-            <% if business.relief_contact.present? %><%= button_to "Relief: " + business.relief_contact, contact_path(contact_string: business.relief_contact), id:'relief-contact-btn' %><% end %>
-          </div>
-        </td>
-      <% end %>
-      <div id="foodservice-contact"></div>
+      <th> Business / Organization </th>
+      <th> Resources </th>
       <% if browser_type == "mobile" or browser_type == "tablet" %>
       <% else %>
-        <td> <%= business.community.name %> </td>
+        <th> Community </th>
       <% end %>
     </tr>
-  <% end %>
-</table>
+    <% @businesses.each do |business| %>
+      <tr>
+        <td> <%= link_to business.name, business_path(business.id) %> </td>
+        <% if business.delivery_contact.present? or business.pickup_contact.present? or business.relief_contact.present? %>
+          <td>
+            <div class="resource-container">
+              <% if business.delivery_contact.present? %>
+                <% if browser_type == "mobile" or browser_type == "tablet" %>
+                  <%= button_to 'Delivery', contact_path(contact_string: business.delivery_contact), id: 'foodservice-contact-btn' %>
+                <% else %>
+                  <%= button_to 'Delivery: ' + business.delivery_contact, contact_path(contact_string: business.delivery_contact), id: 'foodservice-contact-btn' %>
+                <% end %>
+              <% end %>
+              <% if business.pickup_contact.present? %>
+                <% if browser_type == "mobile" or browser_type == "tablet" %>
+                  <%= button_to 'Pick-Up', contact_path(contact_string: business.pickup_contact), id: 'foodservice-contact-btn' %>
+                <% else %>
+                  <%= button_to 'Pick-Up: ' + business.pickup_contact, contact_path(contact_string: business.pickup_contact), id: 'foodservice-contact-btn' %>
+                <% end %>
+              <% end %>
+              <% if business.relief_contact.present? %>
+                <% if browser_type == "mobile" or browser_type == "tablet" %>
+                  <%= button_to "Relief", contact_path(contact_string: business.relief_contact), id:'relief-contact-btn' %>
+                <% else %>
+                  <%= button_to "Relief: " + business.relief_contact, contact_path(contact_string: business.relief_contact), id:'relief-contact-btn' %>
+                <% end %>
+              <% end %>
+            </div>
+          </td>
+        <% end %>
+        <div id="foodservice-contact"></div>
+        <% if browser_type == "mobile" or browser_type == "tablet" %>
+        <% else %>
+          <td> <%= business.community.name %> </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

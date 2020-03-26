@@ -31,18 +31,9 @@ $breakpoint: 1200px;
 .resource-container {
   display: flex;
   width:100%;
-}
-
-.resource-container button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  @media (max-width: $breakpoint) {
+    display:block;
+  }
 }
 
 .resource-container input {
@@ -55,6 +46,13 @@ $breakpoint: 1200px;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  @media (max-width: $breakpoint) {
+    font-size: 4rem;
+  }
+}
+
+#business-index {
+  overflow-x: hidden;
 }
 
 #business-index-table {

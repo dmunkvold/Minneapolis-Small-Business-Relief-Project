@@ -43,11 +43,21 @@ ul {
 select {
   padding: 8px;
   font-size: 1.25rem;
+  @media (max-width: $breakpoint) {
+    font-size: 4rem;
+  }
+}
+
+label {
+  padding:12px;
 }
 
 input {
   padding: 8px;
   font-size: 1.25rem;
+  @media (max-width: $breakpoint) {
+    font-size: 4rem;
+  }
 }
 
 input[type=submit] {
@@ -60,6 +70,9 @@ input[type=submit] {
   transition: 0.3s;
   background-color: #76A9DD;
   cursor: pointer;
+  @media (max-width: $breakpoint) {
+    padding: 32px;
+  }
 }
 
 input[type=submit]:hover {
@@ -87,6 +100,15 @@ ul {
 
 #title{
   width: 50%;
+}
+
+#devise-links {
+  color: black;
+  width:100%;
+  text-align: center;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 1.25rem;
 }
 
 .navbar table {

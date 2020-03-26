@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+# Business controller deals with requests involving business objects
+
 class BusinessesController < ApplicationController
   include ApplicationHelper
 
@@ -56,7 +59,10 @@ class BusinessesController < ApplicationController
   end
 
   private
+
   def business_params
-    params.require(:business).permit(:name, :status, :description, :community_id, :user_id, :delivery_contact, :pickup_contact, :relief_contact)
+    params.require(:business).permit(:name, :status, :description,
+      :community_id, :user_id, :delivery_contact, :pickup_contact,
+      :relief_contact)
   end
 end
