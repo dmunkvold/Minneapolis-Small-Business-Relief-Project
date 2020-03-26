@@ -9,7 +9,7 @@
     <p>If you want to register your business with the Minneapolis Small Business Relief Project, select "Register Your Business from the Navigation Menu."</p>
     <br>
     <h3> Filter by Community </h3>
-    <%= form_tag('/businesses', method: :get) do %>
+    <%= form_tag('/businesses', method: :get, class: "community-filter-form") do %>
       <%= select_tag :community_id, options_for_select(Community.all.map { | c | [c.name, c.id] }), include_blank: true %>
       <%= submit_tag 'Filter' %>
     <% end %>

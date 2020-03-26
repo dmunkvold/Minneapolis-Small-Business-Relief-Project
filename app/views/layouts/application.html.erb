@@ -48,8 +48,7 @@
                 <% end %>
                 <li>
                   <%= form_tag('/businesses', method: :get) do %>
-                    <%= text_field_tag :name, params[:name] %>
-                    <%= submit_tag 'Search' %>
+                    <%= text_field_tag :name, params[:name], value: 'Search' %>
                   <% end %>
                 </li>
                 </ul>
@@ -59,17 +58,6 @@
         </table>
       </div>
     <% else %>
-
-
-
-
-
-
-
-
-
-
-
       <div class="navbar">
         <table style="width:100%">
           <tr>
@@ -79,8 +67,7 @@
             <td>
               <td>
                 <%= form_tag('/businesses', method: :get) do %>
-                  <%= text_field_tag :name, params[:name] %>
-                  <%= submit_tag 'Search' %>
+                  <%= text_field_tag :name, params[:name], value: 'Search' %>
                 <% end %>
               </td>
               <% unless current_page?(new_business_path) %>
@@ -101,18 +88,13 @@
         </table>
       </div>
     <% end %>
-
-
-
-
     <% if flash[:notice] -%>
       <div class = "notice-box"><%= flash[:notice] %></div>
     <% end %>
 
-
     <%= yield %>
 
-
+    <br>
     <div class="footer">
       <p>Powered by PC Doodle 2020</p>
     </div>

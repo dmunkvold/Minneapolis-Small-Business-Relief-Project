@@ -44,7 +44,9 @@ select {
   padding: 8px;
   font-size: 1.25rem;
   @media (max-width: $breakpoint) {
-    font-size: 4rem;
+    font-size: 3rem;
+    width:50%;
+    height: 138px;
   }
 }
 
@@ -72,12 +74,17 @@ input[type=submit] {
   cursor: pointer;
   @media (max-width: $breakpoint) {
     padding: 32px;
+    width: 49%;
   }
 }
 
 input[type=submit]:hover {
   background-color: white;
   color: black;
+}
+
+input[type=text] {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 #title-mobile{

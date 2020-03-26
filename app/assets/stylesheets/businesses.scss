@@ -48,6 +48,7 @@ $breakpoint: 1200px;
   cursor: pointer;
   @media (max-width: $breakpoint) {
     font-size: 4rem;
+    width: 100%;
   }
 }
 
@@ -68,6 +69,7 @@ $breakpoint: 1200px;
    font-size: 3rem;
    border: 2px solid #ddd;
    padding: 16px;
+   width:50%;
  }
 }
 
@@ -99,6 +101,12 @@ $breakpoint: 1200px;
 
 #business-index-table a:hover {
   color: #006BDE;
+}
+
+#business-index-table input[type=submit] {
+  @media (max-width: $breakpoint) {
+    width:100%;
+  }
 }
 
 #foodservice-contact-btn {
