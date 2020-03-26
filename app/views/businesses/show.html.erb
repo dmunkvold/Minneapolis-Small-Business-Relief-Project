@@ -1,13 +1,20 @@
 <div id='business-profile'>
   <h1> <%= @business.name %> </h1>
 
-  <h3> Status </h3>
+  <h3>Status</h3>
   <p> <%= @business.status %> </p>
 
-  <h3> Description </h3>
+  <h3>Resources</h3>
+  <div class="resource-container">
+    <% if @business.delivery_contact.present? %><%= button_to 'Delivery: ' + @business.delivery_contact, contact_path(contact_string: @business.delivery_contact), id: 'foodservice-contact-btn' %><% end %>
+    <% if @business.pickup_contact.present? %><%= button_to 'Pick-Up: ' + @business.pickup_contact, contact_path(contact_string: @business.pickup_contact), id: 'foodservice-contact-btn' %><% end %>
+    <% if @business.relief_contact.present? %><%= button_to "Relief: " + @business.relief_contact, contact_path(contact_string: @business.relief_contact), id:'relief-contact-btn' %><% end %>
+  </div>
+
+  <h3>Description</h3>
   <p> <%= @business.description %> </p>
 
-  <h3> Community </h3>
+  <h3>Community</h3>
   <p> <%= @business.community.name %> </p>
 
 </div>

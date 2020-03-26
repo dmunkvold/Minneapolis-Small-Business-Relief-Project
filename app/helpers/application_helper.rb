@@ -7,7 +7,11 @@ module ApplicationHelper
   end
 
   def contact_business(contactString)
-    redirect_to contactString
+    if contactString.include? "http"
+      redirect_to contactString
+    else
+      redirect_to "tel:" + contactString
+    end
   end
 
   def uri?(string)

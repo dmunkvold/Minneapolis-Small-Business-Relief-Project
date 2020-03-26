@@ -50,6 +50,23 @@ input {
   font-size: 1.25rem;
 }
 
+input[type=submit] {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-style: none;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  background-color: #76A9DD;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: black;
+}
+
 #title-mobile{
  display: block;
  padding-left: 16px;
@@ -68,6 +85,10 @@ ul {
   background-color: #76A9DD;
 }
 
+#title{
+  width: 50%;
+}
+
 .navbar table {
   padding: 8px;
 }
@@ -82,14 +103,9 @@ ul {
   color: black;
 }
 
-.navbar-desktop-menu li {
-  display:inline;
-  text-align: right;
-  float: right;
-}
-
-.navbar-desktop-menu li a {
+.navbar a {
   color: white;
+  width:100%;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -251,6 +267,7 @@ ul {
   margin:12px;
   font-size: 1.5rem;
 }
+
 
 /* Style the button that is used to open and close the collapsible content */
 /* Style the button that is used to open and close the collapsible content */

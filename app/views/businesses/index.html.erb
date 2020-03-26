@@ -30,9 +30,9 @@
       <% if business.delivery_contact.present? or business.pickup_contact.present? or business.relief_contact.present? %>
         <td>
           <div class="resource-container">
-            <% if business.delivery_contact.present? %><%= button_to 'TEST', contact_path(contact_string: business.delivery_contact) %><button id='foodservice-contact-btn'>Delivery: <br><%= business.delivery_contact %></button><% end %>
-            <% if business.pickup_contact.present? %><button id='foodservice-contact-btn'>Pick-Up: <br><%= business.pickup_contact %></button><% end %>
-            <% if business.relief_contact.present? %><%= button_to 'RELIEF', contact_path(contact_string: business.relief_contact) %><button id='relief-contact-btn'>Relief: <br><%= business.relief_contact %></button><% end %>
+            <% if business.delivery_contact.present? %><%= button_to 'Delivery: ' + business.delivery_contact, contact_path(contact_string: business.delivery_contact), id: 'foodservice-contact-btn' %><% end %>
+            <% if business.pickup_contact.present? %><%= button_to 'Pick-Up: ' + business.pickup_contact, contact_path(contact_string: business.pickup_contact), id: 'foodservice-contact-btn' %><% end %>
+            <% if business.relief_contact.present? %><%= button_to "Relief: " + business.relief_contact, contact_path(contact_string: business.relief_contact), id:'relief-contact-btn' %><% end %>
           </div>
         </td>
       <% end %>
