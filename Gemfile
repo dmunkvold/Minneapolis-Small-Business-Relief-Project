@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+gem 'passenger'
+
 gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
