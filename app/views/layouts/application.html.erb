@@ -26,7 +26,7 @@
               <%= link_to "Minneapolis Small Business Relief Project", root_path %>
             </td>
             <td id="hamburger-mobile">
-              <button id="navbar-toggle-dropdown", onclick="toggleDropdown()"><i class="fa fa-bars"></i></button>
+              <button id="navbar-toggle-dropdown" onclick="toggleDropdown()"><i class="fa fa-bars"></i></button>
             </td>
           <tr>
             <td id="dropdown-container">
@@ -91,9 +91,7 @@
     <% if flash[:notice] -%>
       <div class = "notice-box"><%= flash[:notice] %></div>
     <% end %>
-
     <%= yield %>
-
     <br>
     <div class="footer">
       <p>Powered by PC Doodle 2020</p>
