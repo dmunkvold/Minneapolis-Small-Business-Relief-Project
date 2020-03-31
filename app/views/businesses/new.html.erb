@@ -1,5 +1,5 @@
 <div class='business-form'>
-  <%= form_for @business do |b| %>
+  <%= form_with model: @business do |b| %>
     <h2>Name</h2>
     <p>Please enter the name of your business</p>
     <%= b.text_field :name %>

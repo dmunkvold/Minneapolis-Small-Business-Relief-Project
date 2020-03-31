@@ -47,7 +47,7 @@
                   <% end %>
                 <% end %>
                 <li>
-                  <%= form_tag('/businesses', method: :get) do %>
+                  <%= form_with('/businesses', method: :get) do %>
                     <%= text_field_tag :name, params[:name], value: 'Search' %>
                   <% end %>
                 </li>
