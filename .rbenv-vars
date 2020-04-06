@@ -1,0 +1,6 @@
+# For Postgres
+DATABASE_URL=postgresql://pcdoodle:password@127.0.0.1/minneapolissmallbusinessreliefproject
+
+
+RAILS_MASTER_KEY=ohai
+SECRET_KEY_BASE=1234567890
